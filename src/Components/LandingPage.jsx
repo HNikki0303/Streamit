@@ -76,7 +76,10 @@ export default function LandingPage() {
             {login ? (
               <Login />
             ) : (
-               register?(<Register/>):(
+               register?(
+                <
+                Register onSuccess={handleRegisterSuccess}
+               />):(
               
               <div className="text-center space-y-6">
                 <h2 className="text-3xl font-bold text-[#E95670]">Welcome!</h2>
@@ -89,8 +92,7 @@ export default function LandingPage() {
                     Login
                   </button>
                   <button className="bg-[#713770] text-white px-4 py-2 rounded shadow hover:scale-104" 
-                          onClick={()=> showRegister(true)}
-                          
+                          onClick={()=> showRegister(true)}     
                   > 
                     Register
                   </button>

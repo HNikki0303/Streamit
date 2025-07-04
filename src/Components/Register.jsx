@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Register = () => {
+const Register = ({onSuccess}) => {
   const [formValues, setFormValues] = useState({
     fullName: "",
     email: "",
@@ -51,6 +51,10 @@ const Register = () => {
       if (res.status == 201 || data.statusCode === 200) {
         setMessage(" Registration successful!");
         console.log("User registered:", data);
+        if(onSuccess){
+          onSuccess();//Then check if a prop onSuccess was passed to the component,
+                      //And if it exists, call it as a function.
+        }
         // Optionally redirect or clear form
       } else {
         setMessage(data.message || "Registration failed.");
