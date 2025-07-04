@@ -78,7 +78,7 @@ export default function LandingPage() {
             ) : (
                register?(
                 <
-                Register onSuccess={handleRegisterSuccess}
+                Register onSuccess={handleSuccessfulRegistration}
                />):(
               
               <div className="text-center space-y-6">

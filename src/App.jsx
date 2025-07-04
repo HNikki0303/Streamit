@@ -7,14 +7,13 @@ import User from "./Components/User";
 
 function App() {
   return (
-    
    <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/user" element={<User />} />
       </Routes>
     </Router>
-    
+
   )
 }
 
