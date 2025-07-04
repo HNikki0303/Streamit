@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Login from './Login.jsx';
 import Register from './Register.jsx';
+import { useNavigate } from "react-router-dom";
+import User from './User.jsx';
 
 const features = [
   {
@@ -21,9 +23,14 @@ const features = [
 ];
 
 export default function LandingPage() {
+  const navigate = useNavigate();
   const [started, setStarted] = useState(false);//for the get started button
   const [login,showLogin]= useState(false);
   const [register,showRegister]= useState(false);
+
+  const handleSuccessfulRegistration=()=>{
+    navigate('/user');
+  }
 
   return (
     <div className="min-h-screen font-sans bg-gradient-to-br from-[#432F70] via-[#5E3B73] to-[#713770] text-white">
@@ -83,6 +90,7 @@ export default function LandingPage() {
                   </button>
                   <button className="bg-[#713770] text-white px-4 py-2 rounded shadow hover:scale-104" 
                           onClick={()=> showRegister(true)}
+                          
                   > 
                     Register
                   </button>
