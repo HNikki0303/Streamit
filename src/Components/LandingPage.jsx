@@ -69,7 +69,8 @@ export default function LandingPage() {
             {login ? (
               <Login />
             ) : (
-              setSubmitRegister?(<User/>):
+               register?(<Register/>):(
+              
               <div className="text-center space-y-6">
                 <h2 className="text-3xl font-bold text-[#E95670]">Welcome!</h2>
                 <p className="text-sm">Log in to your account or register to start streaming</p>
@@ -86,7 +87,7 @@ export default function LandingPage() {
                     Register
                   </button>
                 </div>
-              </div>
+              </div>)
             )}
           </div>
         </div>
