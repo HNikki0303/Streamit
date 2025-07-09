@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Login from './Login.jsx';
 import Register from './Register.jsx';
 import { useNavigate } from "react-router-dom";
-import User from './User.jsx';
+import UploadVideo from './UploadVideo.jsx';
 
 const features = [
   {
@@ -29,7 +29,7 @@ export default function LandingPage() {
   const [register,showRegister]= useState(false);
 
   const handleSuccessfulRegistration=()=>{
-    navigate('/user');
+    navigate('/upload');
   }
 
   return (
@@ -74,7 +74,7 @@ export default function LandingPage() {
           {/* Right Side: Login/Register UI */}
            <div className="w-1/2 bg-[#edebf1ec] text-gray-800 flex items-center justify-center px-8">
             {login ? (
-              <Login />
+              <Login onSuccess={handleSuccessfulRegistration} />
             ) : (
                register?(
                 <

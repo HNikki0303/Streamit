@@ -44,6 +44,7 @@ const Register = ({onSuccess}) => {
       const res = await fetch("http://localhost:8000/api/v1/user/register", {
         method: "POST",
         body: formData,
+        credentials: "include",
       });
 
       const data = await res.json();
@@ -134,7 +135,6 @@ const Register = ({onSuccess}) => {
           type="submit"
           className="w-full bg-[#E95670] text-white py-2 rounded hover:bg-[#c9435b] transition"
           disabled={loading}
-          onClick={() => setRegistered(true)}
         >
           {loading ? "Registering..." : "Register"}
         </button>
@@ -145,3 +145,6 @@ const Register = ({onSuccess}) => {
 };
 
 export default Register;
+
+
+//yaha jo disabled karke hai button submit wale mein vo ek html attribute hai , jiske saath lagaoge agar vo true hua to use firse chalne nahi dega

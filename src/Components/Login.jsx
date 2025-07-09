@@ -30,6 +30,7 @@ const Login = ({ onSuccess }) => {
           "Content-Type": "application/json",
         },// optional: if your backend uses cookies
         body: JSON.stringify(formValues),
+        credentials: "include", // include cookies in the request
       });
 
       const data = await res.json();
