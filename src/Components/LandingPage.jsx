@@ -29,7 +29,7 @@ export default function LandingPage() {
   const [register,showRegister]= useState(false);
 
   const handleSuccessfulRegistration=()=>{
-    navigate('/upload');
+    navigate('/publish');
   }
 
   return (
