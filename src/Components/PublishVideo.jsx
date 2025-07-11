@@ -38,7 +38,7 @@ const PublishVideo = () =>{
         const Body = new FormData();
         Body.append("title",formData.title);
         Body.append("description",formData.description);
-        Body.append("videoFile",videoFile);
+        Body.append("video",videoFile);
         if(thumbnail)Body.append("thumbnail",thumbnail);
 
         try{
@@ -59,8 +59,8 @@ const PublishVideo = () =>{
             Navigate('/FormattedVideo');
         }
         catch(err){
+            console.log(err.message);
             setMessage(err.message )
-            alert("there was an error while publishing ")
         }
         finally{
             setLoading(false);
