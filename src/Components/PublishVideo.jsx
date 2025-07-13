@@ -1,14 +1,16 @@
 import React from 'react';
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import FormattedVideo from './FormattedVideo.jsx';
 
 const PublishVideo = () =>{
     
     const [formData, setformData] = useState({
-        "title":"",
-        "description":"",
+      title:"",
+      description:"",
     })
 
+    const [id,setId] = useState(null);
     const Navigate =  useNavigate();
 
     const [videoFile,setVideoFile]= useState(null);
@@ -49,14 +51,16 @@ const PublishVideo = () =>{
                 credentials:"include"
             });
 
+
             const received = await res.json();
 
-            if(received.status==200 || received.stausCode==200){
+            if(received.status === 200 || received.statusCode === 200){
                 setMessage("Video has been published on the server")
+                setId(received.data._id);
+
             }else{
-                setMessage("Sorry ma'am we could not publish the video :(")
+                setMessage( "Sorry ma'am we could not publish the video :(" )
             }
-            Navigate('/FormattedVideo');
         }
         catch(err){
             console.log(err.message);
@@ -64,6 +68,7 @@ const PublishVideo = () =>{
         }
         finally{
             setLoading(false);
+            
         }
         
     }
@@ -132,6 +137,13 @@ const PublishVideo = () =>{
           {loading ? 'Publishing...' : 'Publish Video'}
         </button>
       </form>
+      {/* render the UploadVideo Component and give id as prop */}
+      {id && (
+        <div>
+          <FormattedVideo id={id}></FormattedVideo>
+        </div>
+      )
+      }
     </div>
   );
     
