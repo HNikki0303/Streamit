@@ -47,8 +47,38 @@ const PaginatedVideoFeed = () => {
   };
 
   useEffect(() => {
-    fetchVideoIds();
-  }, [page]);
+  const fetchPaginatedVideos = async () => {
+    console.log(`📡 Fetching videos for page ${page}`);
+    try {
+      const res = await fetch(`http://localhost:8000/api/v1/video/paginated?page=${page}&limit=6`);
+      const response = await res.json();
+
+      console.log("🧾 Raw paginated response:", response);
+
+      if (res.ok && response.success) {
+        const newVideoIds = response.data.videos.map(v => v._id);
+        console.log(`✅ Video IDs fetched for page ${page}:`, newVideoIds);
+
+        if (newVideoIds.length === 0) {
+          console.log("🔚 No more video IDs to fetch.");
+          setHasMore(false);
+        } else {
+          setVideoIds(prev => [...prev, ...newVideoIds]);
+          setHasMore(response.data.currentPage < response.data.totalPages);
+        }
+      } else {
+        console.error("❌ Failed to fetch paginated videos:", response.message);
+        setHasMore(false);
+      }
+    } catch (err) {
+      console.error("💥 Error while fetching paginated videos:", err);
+      setHasMore(false);
+    }
+  };
+
+  fetchPaginatedVideos();
+}, [page]);
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
