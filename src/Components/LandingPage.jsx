@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Login from './Login.jsx';
 import Register from './Register.jsx';
 import { useNavigate } from "react-router-dom";
-import UploadVideo from './UploadVideo.jsx';
+
 
 const features = [
   {
@@ -29,7 +29,7 @@ export default function LandingPage() {
   const [register,showRegister]= useState(false);
 
   const handleSuccessfulRegistration=()=>{
-    navigate('/publish');
+    navigate('/PaginatedVideoFeed');
   }
 
   return (
