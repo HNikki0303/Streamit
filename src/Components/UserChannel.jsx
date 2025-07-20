@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaHistory, FaUserEdit, FaLock, FaUpload } from "react-icons/fa";
 import PaginatedVideoFeed from "./PaginatedVideoFeed";
 
 export default function UserChannel() {
+
+  const navigate= useNavigate();
   const [userDetails, setUserDetails] = useState({
     coverImage: null,
     fullName: '',
@@ -97,7 +100,9 @@ export default function UserChannel() {
           <div className="flex items-center justify-between mb-4 relative">
             <h3 className="text-xl font-semibold text-white bg-opacity-30">My Videos</h3>
             <div className="absolute left-1/2 transform -translate-x-1/2">
-              <button className="bg-[#E95670] hover:bg-[#c9435b] text-white px-6 py-2 rounded-full text-lg shadow-sm transition">
+              <button className="bg-[#E95670] hover:bg-[#c9435b] text-white px-6 py-2 rounded-full text-lg shadow-sm transition" onClick={()=>{
+                navigate('/B');
+              }}>
                 Search Videos
               </button>
             </div>
