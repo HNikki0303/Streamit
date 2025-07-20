@@ -29,7 +29,7 @@ export default function LandingPage() {
   const [register,showRegister]= useState(false);
 
   const handleSuccessfulRegistration=()=>{
-    navigate('/AI');
+    navigate('/UserChannel');
   }
 
   return (
@@ -48,9 +48,9 @@ export default function LandingPage() {
                 </div>
                 <div className="pr-2">
                   <img
-                    src="/chatbot-avatar.png"
-                    alt="Chatbot"
-                    className="w-10 h-10 rounded-full border border-[#E95670] hover:scale-105 transition"
+                  src="/chatbot.png"
+                  alt="Chatbot"
+                  className="w-15 h-15 rounded-full hover:scale-105 transition"
                   />
                 </div>
               </div>
@@ -113,9 +113,10 @@ export default function LandingPage() {
               </div>
               <div className="pr-2">
                 <img
-                  src="/chatbot-avatar.png"
+                  src="/chatbot.png"
                   alt="Chatbot"
-                  className="w-10 h-10 rounded-full border border-[#E95670] hover:scale-105 transition"
+                  onClick={()=>{navigate('/AI')}}
+                  className="fixed top-1 right-4 w-18 h-16 z-10 rounded-full border border-[#E95670] hover:scale-105 transition"
                 />
               </div>
             </div>
