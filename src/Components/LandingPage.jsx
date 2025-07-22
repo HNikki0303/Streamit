@@ -7,18 +7,18 @@ import { useNavigate } from "react-router-dom";
 const features = [
   {
     title: "Create Your Channel",
-    description: "Launch your personal streaming hub and go live anytime.",
-    image: "/create-channel.jpg",
+    description: "Register or Login to your channel , to create or watch content with smart and personalised AI assistant : Streamy. ",
+    image: "/UserChannel.png",
   },
   {
-    title: "Connect with Community",
-    description: "Engage, chat, and grow your audience.",
-    image: "/interact.jpg",
+    title: "Stream better with AI ",
+    description: "Stream videos creatively , get ideas for content , script , insights and better video presentation through your personal AI assistant : Streamy.",
+    image: "/VideoUpload.png",
   },
   {
-    title: "Smart AI Assistant",
-    description: "Ask questions and explore deeper with integrated AI.",
-    image: "/chatbot.jpg",
+    title: "Watch deeper with AI",
+    description: "Ask questions and explore deeper along with watching the video content with integrated and personalised AI assistant : Streamy.",
+    image: "/Watch.png",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function LandingPage() {
             <div className="w-full bg-[#e95671ce] bg-opacity-30 py-4 px-6">
               <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <div className="flex items-center space-x-3">
-                  <img src="/logo.svg" alt="Logo" className="w-9 h-9" />
+                  <img src="/Streamit.png" alt="Logo" className="w-9 h-9" />
                   <h1 className=" text-2xl font-bold tracking-wide">Streamit</h1>
                 </div>
                 <div className="pr-2">
@@ -58,14 +58,14 @@ export default function LandingPage() {
 
             {/* Hero Section */}
             <section className="relative py-20 px-6 bg-gradient-to-br from-[#713770] to-[#432F70] h-full">
-              <div className="absolute top-[-6rem] left-[-6rem] w-96 h-96 bg-[#E95670] opacity-20 blur-3xl rounded-full animate-pulse z-0" />
+              <div className="absolute top-[-8rem] left-[-6rem] w-96 h-96 bg-[#E95670] opacity-20 blur-3xl rounded-full animate-pulse z-0" />
               <div className="absolute bottom-[-6rem] right-[-6rem] w-96 h-96 bg-[#B34270] opacity-25 blur-2xl rounded-full animate-pulse z-0" />
               <div className="relative z-10 max-w-5xl mx-auto text-center">
                 <h2 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-5">
-                  Your Stream. Your Space.
+                   Stream Smarter . Watch Deeper .
                 </h2>
                 <p className="text-lg text-pink-100 max-w-xl mx-auto mb-8">
-                  Share your passion, build your audience, and interact with AI while streaming.
+                  Streaming or watching? Streamy's got you. Upload, explore, and learn — all in one smart platform: StreamIt.
                 </p>
               </div>
             </section>
@@ -108,8 +108,9 @@ export default function LandingPage() {
           <div className="w-full bg-[#e95671ce] bg-opacity-30 py-4 px-6">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
               <div className="flex items-center space-x-3">
-                <img src="/logo.svg" alt="Logo" className="w-9 h-9" />
-                <h1 className=" text-2xl font-bold tracking-wide">Streamit</h1>
+                <img src="/Streamit.png
+                " alt="Logo" className="w-20 h-12" />
+                <h1 className=" text-2xl font-bold tracking-wide">StreamIt</h1>
               </div>
               <div className="pr-2">
                 <img
@@ -127,11 +128,11 @@ export default function LandingPage() {
             <div className="absolute top-[-6rem] left-[-6rem] w-96 h-96 bg-[#E95670] opacity-20 blur-3xl rounded-full animate-pulse z-0" />
             <div className="absolute bottom-[-6rem] right-[-6rem] w-96 h-96 bg-[#B34270] opacity-25 blur-2xl rounded-full animate-pulse z-0" />
             <div className="relative z-10 max-w-5xl mx-auto text-center">
-              <h2 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-5">
-                Your Stream. Your Space.
+              <h2 className="text-4xl sm:text-6xl font-extrabold leading-tight mb-5">
+                Stream smarter. Watch deeper.
               </h2>
               <p className="text-lg text-pink-100 max-w-xl mx-auto mb-8">
-                Share your passion, build your audience, and interact with AI while streaming.
+                Streaming or watching? Streamy's got you. Upload, explore, and learn — all in one smart platform : StreamIt. 
               </p>
               <button
                 onClick={() => setStarted(true)}
@@ -154,7 +155,7 @@ export default function LandingPage() {
                     <img
                       src={feature.image}
                       alt={feature.title}
-                      className="w-full h-52 object-cover"
+                      className=" h-52 object-cover"
                     />
                     <div className="p-6">
                       <h4 className="text-xl font-semibold text-[#FFB4C6] mb-2">
