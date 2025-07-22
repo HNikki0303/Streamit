@@ -1,8 +1,11 @@
-import React from "react";
+import React , {useState} from "react";
 import { FiSearch } from "react-icons/fi";
 import PaginatedVideoFeed from './PaginatedVideoFeed';
 
 const CommonB = () => {
+  const [search,setSearch ] = useState("");
+  const [searchButton,setSearchButton] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#432F70] via-[#5E3B73] to-[#713770] text-white font-sans relative overflow-hidden">
       
@@ -26,16 +29,28 @@ const CommonB = () => {
             bg-white/10 backdrop-blur-sm text-white text-base placeholder-white/70 
             shadow-md transition-all duration-300 focus:outline-none 
             focus:ring-2 focus:ring-[#d88a9a] hover:bg-white/20"
+            value={search}
+            onChange={(e)=>{
+              setSearch(e.target.value)
+            }}
           />
-          <button className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition">
+          <button 
+          className="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition"
+          onClick = {()=>{
+            setSearchButton(true);
+            setTimeout(() => setSearchButton(true), 0);
+          }}
+          >
             <FiSearch size={20} />
           </button>
         </div>
       </div>
-
+          {searchButton}
       {/* Search Results Area */}
       <div >
-        <PaginatedVideoFeed></PaginatedVideoFeed>
+        { searchButton && 
+        <PaginatedVideoFeed fetchUrl={`http://localhost:8000/api/v1/video/searchTitle?title=${encodeURIComponent(search)}&`} />
+        }
       </div>
     </div>
   );
