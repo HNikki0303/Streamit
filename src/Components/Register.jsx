@@ -31,12 +31,13 @@ const Register = ({onSuccess}) => {
 
     setLoading(true);
     setMessage("");
-
+    
     const formData = new FormData();
+   
     formData.append("fullName", formValues.fullName);
     formData.append("email", formValues.email);
     formData.append("username", formValues.username);
-    formData.append("password", formValues.password);
+    formData.append("password", formValues.password); 
     formData.append("avatar", avatarFile);
     if (coverImageFile) formData.append("coverImage", coverImageFile);
 
