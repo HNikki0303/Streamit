@@ -109,7 +109,7 @@ export default function LandingPage() {
             <div className="max-w-7xl mx-auto flex justify-between items-center">
               <div className="flex items-center space-x-3">
                 <img src="/Streamit.png
-                " alt="Logo" className="w-20 h-12" />
+                " alt="Logo" className="w-18 h-17" />
                 <h1 className=" text-2xl font-bold tracking-wide">StreamIt</h1>
               </div>
               <div className="pr-2">
@@ -171,7 +171,7 @@ export default function LandingPage() {
 
           {/* Footer */}
           <footer className="text-center py-6 text-sm bg-[#2c234f] text-gray-300">
-            © 2025 StreamSphere. All rights reserved.
+            © 2025 StreamIt. All rights reserved.
           </footer>
         </>
       )}

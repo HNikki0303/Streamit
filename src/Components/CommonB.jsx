@@ -1,10 +1,12 @@
 import React , {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import PaginatedVideoFeed from './PaginatedVideoFeed';
 
 const CommonB = () => {
   const [search,setSearch ] = useState("");
   const [searchButton,setSearchButton] = useState(false);
+  const Navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#432F70] via-[#5E3B73] to-[#713770] text-white font-sans relative overflow-hidden">
@@ -12,9 +14,10 @@ const CommonB = () => {
       {/* AI Assistant Icon */}
       <div className="absolute top-3 right-4 z-25">
         <img
-          src="/chatbot-avatar.png"
+          src="/chatbot.png"
           alt="AI Assistant"
           className="w-12 h-12 rounded-full border border-[#E95670] hover:scale-105 transition"
+          onClick={()=>{Navigate('/AI')}}
           title="Ask AI Assistant"
         />
       </div>
