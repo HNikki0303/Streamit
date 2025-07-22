@@ -52,9 +52,10 @@ export default function UserChannel() {
       >
         <div className="absolute top-3 right-4 z-10">
           <img
-            src="/chatbot-avatar.png"
+            src="/chatbot.png"
             alt="AI Assistant"
-            className="w-9 h-9 rounded-full border border-[#E95670] hover:scale-105 transition"
+            className="fixed top-4 right-4 w-18 h-16 z-10 rounded-full border border-[#E95670] hover:scale-105 transition"
+            onClick={()=>{navigate('/AI')}}
             title="Ask AI Assistant"
           />
         </div>
@@ -76,23 +77,23 @@ export default function UserChannel() {
       </div>
 
       {/* Layout */}
-      <div className="flex pt-6">
-        <aside className="w-20 sm:w-24 flex flex-col items-center py-6 space-y-8 bg-white/10 rounded-tr-2xl backdrop-blur-md text-xs text-center">
-          <Link to="/watch-history" className="flex flex-col items-center hover:text-[#e95671ce] transition">
-            <FaHistory size={20} />
-            <span className="mt-1">History</span>
-          </Link>
+      <div className="flex pt-6 ">
+        <aside className="sticky w-20 sm:w-24 flex flex-col items-center py-6 space-y-8 bg-white/10 rounded-tr-2xl backdrop-blur-md text-xs text-center">
           <Link to="/UpdateProfile" className="flex flex-col items-center hover:text-[#e95671ce] transition">
             <FaUserEdit size={20} />
             <span className="mt-1">Profile</span>
           </Link>
-          <Link to="/security" className="flex flex-col items-center hover:text-[#e95671ce] transition">
-            <FaLock size={20} />
-            <span className="mt-1">Security</span>
-          </Link>
           <Link to="/publish" className="flex flex-col items-center hover:text-[#e95671ce] transition">
             <FaUpload size={20} />
             <span className="mt-1">Upload</span>
+          </Link>
+          <Link to="/watch-history" className="flex flex-col items-center hover:text-[#e95671ce] transition">
+            <FaHistory size={20} />
+            <span className="mt-1">History</span>
+          </Link>
+          <Link to="/security" className="flex flex-col items-center hover:text-[#e95671ce] transition">
+            <FaLock size={20} />
+            <span className="mt-1">Security</span>
           </Link>
         </aside>
 
