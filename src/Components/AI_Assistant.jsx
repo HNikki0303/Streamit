@@ -52,7 +52,7 @@ const AI_Assistant = ({userDetails}) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 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'
+          'Authorization':
         },
         body: JSON.stringify({
           model: "mistralai/mistral-7b-instruct",
