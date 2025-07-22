@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 
-function FormattedVideo({ id }) {
+const FormattedVideo = ({ id }) => {
+  const navigate = useNavigate();
+
   const [formattedVideo, setFormattedVideo] = useState({
     videoUrl: null,
     title: '',
+    description:'',
     thumbnail: null,
     duration: '',
     owner: {
       username: '',
-      avatar: '', // Assuming your backend sends an avatar URL
+      avatar: '',
     },
   });
 
@@ -17,11 +21,7 @@ function FormattedVideo({ id }) {
 
   useEffect(() => {
     const fetchVideoData = async () => {
-      if (!id) {
-        setError('Missing video ID.');
-        return;
-      }
-      console.log(`we have got the video id ${id} `)
+      if (!id) return setError('Missing video ID.');
 
       setLoading(true);
       try {
@@ -37,18 +37,18 @@ function FormattedVideo({ id }) {
           setFormattedVideo({
             videoUrl: video.videoFile,
             title: video.title,
+            description:video.description,
             thumbnail: video.thumbnail,
             duration: video.duration,
             owner: {
               username: video.owner?.username || 'Unknown',
-              avatar: video.owner?.avatar || '', // fallback to blank avatar
+              avatar: video.owner?.avatar || '',
             },
           });
         } else {
           setError(response.message || 'Failed to fetch video');
         }
       } catch (err) {
-        console.error(err);
         setError('An error occurred while fetching the video.');
       } finally {
         setLoading(false);
@@ -58,42 +58,44 @@ function FormattedVideo({ id }) {
     fetchVideoData();
   }, [id]);
 
-  if (loading) return <p className="text-gray-500">Loading...</p>;
+  if (loading) return <p className="text-gray-400">Loading...</p>;
   if (error) return <p className="text-red-500">{error}</p>;
   if (!formattedVideo.videoUrl) return null;
 
   return (
-    <div className="max-w-xl mx-auto mt-8 p-4 border rounded-lg shadow-md bg-white">
-      <h2 className="text-xl font-semibold mb-2">{formattedVideo.title}</h2>
-
-      <div className="relative mb-2">
+    <div className="w-full max-w-xl mx-auto">
+      {/* VIDEO + OWNER INFO */}
+      <div className="relative w-full h-[360px] rounded-xl overflow-hidden border-4 border-[#df5b7e] shadow-md bg-gradient-to-br from-purple-700 to-purple-900">
         <video
-          width="100%"
-          controls
+          src={formattedVideo.videoUrl}
           poster={formattedVideo.thumbnail}
-          className="rounded-lg w-full"
-        >
-          <source src={formattedVideo.videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          className="w-full h-full object-cover"
+          controls
+          onDoubleClick={() => {
+            navigate('/FullVideo', { state: { videoDetails: formattedVideo } });
+          }}
 
-        <div className="absolute bottom-2 right-2 flex items-center space-x-2 bg-white bg-opacity-80 px-2 py-1 rounded-full">
+        />
+        {/* Owner Username */}
+        <div className="absolute bottom-4 left-4 bg-black/60 px-3 py-1 rounded-full flex items-center gap-2">
           {formattedVideo.owner.avatar && (
             <img
               src={formattedVideo.owner.avatar}
               alt="Avatar"
-              className="w-6 h-6 rounded-full"
+              className="w-6 h-6 rounded-full border border-white"
             />
           )}
-          <span className="text-sm font-medium text-gray-800">
-            {formattedVideo.owner.username}
-          </span>
+          <span className="text-white text-sm font-medium">{formattedVideo.owner.username}</span>
         </div>
       </div>
 
-      <p className="text-sm text-gray-600">Duration: {formattedVideo.duration} seconds</p>
+      {/* TITLE BELOW VIDEO BOX (outside border) */}
+      <div className="mt-2 px-2 py-1 text-white text-base font-semibold text-center bg-[#1a1a1a] rounded-md">
+        {formattedVideo.title}
+      </div>
     </div>
   );
-}
+};
 
 export default FormattedVideo;
+
