@@ -70,7 +70,7 @@ const ChannelDescription = () => {
             <label className="block text-white mb-2">Describe your channel for a personalised AI assistance</label>
             <textarea
               rows={4}
-              placeholder="Enter your channel description here..."
+              placeholder={userDetails.channelDescription}
               className="w-full p-3 bg-white/10 text-white rounded resize-y overflow-auto max-h-64"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -90,7 +90,9 @@ const ChannelDescription = () => {
       {showAssistant && (
         <div className="w-[55%] h-full overflow-y-auto bg-gradient-to-br from-[#3B1F4D] via-[#5E3B73] to-[#713770] text-white p-6">
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 shadow-md h-full">
-            <AI_Assistant />
+            <AI_Assistant
+             userDetails={userDetails}
+            />
           </div>
         </div>
       )}
