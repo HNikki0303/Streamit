@@ -51,7 +51,8 @@ const UpdateProfile = () => {
       {showAssistant && (
         <div className="w-[55%] h-full overflow-y-auto bg-gradient-to-br from-[#3B1F4D] via-[#5E3B73] to-[#713770] text-white p-6">
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 shadow-md h-full">
-            <AI_Assistant />
+            <AI_Assistant
+               userDetails={userDetails} />
           </div>
         </div>
       )}
