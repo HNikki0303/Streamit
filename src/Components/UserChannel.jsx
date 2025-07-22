@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { FaHistory, FaUserEdit, FaLock, FaUpload } from "react-icons/fa";
+import { FaHistory, FaUserEdit, FaLock, FaUpload ,FaInfoCircle } from "react-icons/fa";
 import PaginatedVideoFeed from "./PaginatedVideoFeed";
+import AI_Assistant from "./AI_Assistant";
 
 export default function UserChannel() {
 
   const navigate= useNavigate();
+  const [showAssistant,setShowAssistant] = useState(false);
+
   const [userDetails, setUserDetails] = useState({
     coverImage: null,
     fullName: '',
     avatar: null,
     username: '',
+    channelDescription:''
   });
 
   useEffect(() => {
@@ -34,6 +38,7 @@ export default function UserChannel() {
             fullName: user.fullName,
             avatar: user.avatar,
             username: user.username,
+            channelDescription: user.channelDescription || "",
           });
         }
       } catch (err) {
@@ -42,6 +47,10 @@ export default function UserChannel() {
     };
     userChannel();
   }, []);
+
+  if (showAssistant) {
+    return <AI_Assistant userDetails={userDetails} ></AI_Assistant>
+  }
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#432F70] via-[#5E3B73] to-[#713770] text-white font-sans overflow-hidden">
@@ -54,8 +63,7 @@ export default function UserChannel() {
           <img
             src="/chatbot.png"
             alt="AI Assistant"
-            className="fixed top-4 right-4 w-18 h-16 z-10 rounded-full border border-[#E95670] hover:scale-105 transition"
-            onClick={()=>{navigate('/AI')}}
+            className="fixed top-4 right-4 w-18 h-16 z-10 rounded-full border border-[#E95670] hover:scale-105 transition"onClick={() => setShowAssistant(!showAssistant)}
             title="Ask AI Assistant"
           />
         </div>
@@ -87,6 +95,10 @@ export default function UserChannel() {
             <FaUpload size={20} />
             <span className="mt-1">Upload</span>
           </Link>
+          <Link to="/channel-description" className="flex flex-col items-center hover:text-[#e95671ce] transition">
+          <FaInfoCircle size={20} />
+          <span className="mt-1">About</span>
+          </Link>
           <Link to="/watch-history" className="flex flex-col items-center hover:text-[#e95671ce] transition">
             <FaHistory size={20} />
             <span className="mt-1">History</span>
@@ -116,7 +128,7 @@ export default function UserChannel() {
       </div>
 
       <footer className="text-center text-xs py-6 text-gray-400 mt-10">
-        © 2025 Streamit. All rights reserved.
+        © 2025 StreamIt. All rights reserved.
       </footer>
     </div>
   );
