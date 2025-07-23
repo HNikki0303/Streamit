@@ -108,7 +108,7 @@ Make sure:
 
 ```bash
 git clone https://github.com/HNikki0303/Streamit.git
-cd streamit
+cd Streamit
 ```
 
 ### 2. Install Dependencies
