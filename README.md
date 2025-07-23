@@ -66,6 +66,19 @@ This repo contains the React frontend of the StreamIt application. It handles:
 **🔐 Authentication**
 The frontend interacts with a backend API that manages user sessions and permissions via cookies (with credentials included). The AI assistant requires the user to be logged in to provide personalized suggestions based on the user's channel info.
 
+📁 Repo Structure (Important files)
+---
+/src
+  /components
+    AI_Assistant.jsx
+    FullVideo.jsx
+    PublishVideo.jsx
+    CommonA.jsx
+    FormattedVideo.jsx
+  App.jsx
+  index.js
+---
+
 **🌟 Future Improvements**
 * Editing uploaded video files .
 * Playlist , comment and like fetures for better community based interactivity among the StreamIt users watching and creating the content  .
