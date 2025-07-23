@@ -138,15 +138,14 @@ Update any API base URLs if your backend runs on a different port or domain.
 * ✏️ Edit uploaded videos
 * 💬 Comments, likes, and playlists
 * 🔔 Subscriptions, notifications, and trending feeds
-* 🎙️ AI assistant voice input/output
-* 📱 PWA or mobile app version
 
 ## ❤️ Contributing
 Contributions are welcome! Please open issues or PRs for features, bug fixes, or improvements.
 
 ## 📞 Contact
 Feel free to reach out:
-* Your Name — [your.email@example.com](mailto:your.email@example.com)
+* Nikita Pant
+* Your Name — [nikitapant496@gmail.com](mailto:your.email@example.com)
 * GitHub — [github.com/yourusername](https://github.com/yourusername)
 
 **Thanks for checking out Streamy! Enjoy streaming and creating with AI-powered magic. 🌊✨**
