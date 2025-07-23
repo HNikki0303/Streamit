@@ -145,7 +145,7 @@ Contributions are welcome! Please open issues or PRs for features, bug fixes, or
 ## 📞 Contact
 Feel free to reach out:
 * Nikita Pant
-* Your Name — [nikitapant496@gmail.com](mailto:your.email@example.com)
+* Your Name — [nikitapant496@gmail.com](mailto:nikitapant496.email@example.com)
 * GitHub — [github.com/yourusername](https://github.com/yourusername)
 
 **Thanks for checking out Streamy! Enjoy streaming and creating with AI-powered magic. 🌊✨**
