@@ -107,7 +107,7 @@ Make sure:
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/yourusername/streamit-frontend.git
+git clone https://github.com/HNikki0303/Streamit.git
 cd streamit-frontend
 ```
 
