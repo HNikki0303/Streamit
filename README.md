@@ -70,7 +70,7 @@ The frontend interacts with a backend API that manages user sessions and permiss
 * Playlist , comment and like fetures for better community based interactivity among the StreamIt users watching and creating the content  .
 * Implement user profiles and subscription features in more depth.
 
-**Thanks for checking out Streamy! Enjoy streaming and creating with AI-powered magic. 🌊✨**
+**Thanks for checking out StreamIt! Enjoy streaming and creating with AI-powered magic. 🌊✨**
 
 
   
