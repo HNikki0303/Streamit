@@ -52,7 +52,7 @@ const CommonB = () => {
       {/* Search Results Area */}
       <div >
         { searchButton && 
-        <PaginatedVideoFeed fetchUrl={`http://localhost:8000/api/v1/video/searchTitle?title=${encodeURIComponent(search)}&`} />
+        <PaginatedVideoFeed fetchUrl={`VITE_BACKEND/api/v1/video/searchTitle?title=${encodeURIComponent(search)}&`} />
         }
       </div>
     </div>
