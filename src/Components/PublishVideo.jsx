@@ -67,7 +67,7 @@ const PublishVideo = () => {
     if (thumbnail) body.append("thumbnail", thumbnail);
 
     try {
-      const res = await fetch("http://localhost:8000/api/v1/video/publishAVideo", {
+      const res = await fetch("VITE_BACKEND/api/v1/video/publishAVideo", {
         method: "POST",
         body,
         credentials: "include",
