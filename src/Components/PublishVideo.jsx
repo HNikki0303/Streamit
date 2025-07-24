@@ -30,7 +30,7 @@ const PublishVideo = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/v1/user/currentUser", {
+        const res = await fetch("VITE_BACKEND/api/v1/user/currentUser", {
           credentials: "include",
         });
         const data = await res.json();
