@@ -4,6 +4,7 @@ import { marked } from 'marked';
 
 
 const AI_Assistant = ({userDetails}) => {
+
   if(!userDetails){
     return alert("you might need to login or register to a channel !!")
   }
@@ -52,7 +53,7 @@ const AI_Assistant = ({userDetails}) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization':
+          'Authorization':`Bearer ${import.meta.env.VITE_API_URL}`
         },
         body: JSON.stringify({
           model: "mistralai/mistral-7b-instruct",
