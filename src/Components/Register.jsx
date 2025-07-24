@@ -42,7 +42,7 @@ const Register = ({onSuccess}) => {
     if (coverImageFile) formData.append("coverImage", coverImageFile);
 
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/register", {
+      const res = await fetch("VITE_BACKEND/api/v1/user/register", {
         method: "POST",
         body: formData,
         credentials: "include",
