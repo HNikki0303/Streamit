@@ -21,7 +21,11 @@ function App() {
    <Router>
       <Routes>
 
+<<<<<<< HEAD
         <Route path="/" element={<LandingPage/>} />
+=======
+        <Route path="/" element={<LandingPage />} />
+>>>>>>> 6cb639d2b0354f43027b2684d2811dce566c8fe5
         <Route path="/publish" element = {<PublishVideo/>}/>
         <Route path="/AI" element={<AI_Assistant/>}/>
         <Route path="/FormattedVideo" element={<FormattedVideo/>}/>

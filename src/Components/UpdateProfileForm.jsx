@@ -9,7 +9,7 @@ const UpdateProfileForm = ({ userDetails, setUserDetails }) => {
   const handleFullNameSubmit = async () => {
     setUserDetails((prev) => ({ ...prev, fullName })); // Show instantly
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/updateAccountDetails", {
+      const res = await fetch("VITE_BACKEND/api/v1/user/updateAccountDetails", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -29,7 +29,7 @@ const UpdateProfileForm = ({ userDetails, setUserDetails }) => {
     const formData = new FormData();
     formData.append("avatar",avatar);
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/updateAvatar", {
+      const res = await fetch("VITE_BACKEND/api/v1/user/updateAvatar", {
         method: "PATCH",
         credentials: "include",
         body: formData,
@@ -48,7 +48,7 @@ const UpdateProfileForm = ({ userDetails, setUserDetails }) => {
     const formData = new FormData();
     formData.append("coverImage",coverImage);
     try {
-      const res = await fetch("http://localhost:8000/api/v1/user/updateCoverImage", {
+      const res = await fetch("VITE_BACKEND/api/v1/user/updateCoverImage", {
         method: "PATCH",
         credentials: "include",
         body: formData,
