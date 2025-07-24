@@ -7,6 +7,7 @@ const Login = ({ onSuccess }) => {
     password: "",
   });
 
+  const backendBaseUrl = import.meta.env.VITE_BACKEND; 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -24,7 +25,7 @@ const Login = ({ onSuccess }) => {
     setMessage("");
 
     try {
-      const res = await fetch("VITE_BACKEND/api/v1/user/login", {
+      const res = await fetch(`${backendBaseUrl}/api/v1/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
