@@ -123,7 +123,7 @@ export default function UserChannel() {
           </div>
 
           <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-md min-h-[300px]">
-            <PaginatedVideoFeed fetchUrl=`${backendBaseUrl}/api/v1/video/paginated/user`></PaginatedVideoFeed>
+            <PaginatedVideoFeed fetchUrl={`${backendBaseUrl}/api/v1/video/paginated/user`}></PaginatedVideoFeed>
           </div>
         </main>
       </div>
