@@ -9,6 +9,8 @@ export default function UserChannel() {
   const navigate= useNavigate();
   const [showAssistant,setShowAssistant] = useState(false);
 
+  const backendBaseUrl = import.meta.env.VITE_BACKEND;
+
   const [userDetails, setUserDetails] = useState({
     coverImage: null,
     fullName: '',
@@ -20,7 +22,7 @@ export default function UserChannel() {
   useEffect(() => {
     const userChannel = async () => {
       try {
-        const res = await fetch("VITE_BACKEND/api/v1/user/currentUser", {
+        const res = await fetch(`${backendBaseUrl}/api/v1/user/currentUser`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

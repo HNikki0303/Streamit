@@ -5,11 +5,13 @@ const UpdateProfileForm = ({ userDetails, setUserDetails }) => {
   const [avatar, setavatar] = useState(null);
   const [coverImage, setcoverImage] = useState(null);
 
+  const backendBaseUrl = import.meta.env.VITE_BACKEND;
+
   // Update UI immediately and send to DB
   const handleFullNameSubmit = async () => {
     setUserDetails((prev) => ({ ...prev, fullName })); // Show instantly
     try {
-      const res = await fetch("VITE_BACKEND/api/v1/user/updateAccountDetails", {
+      const res = await fetch(`${backendBaseUrl}/api/v1/user/updateAccountDetails`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

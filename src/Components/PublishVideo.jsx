@@ -11,6 +11,7 @@ const PublishVideo = () => {
     avatar: null,
     coverImage: null,
   });
+  const backendBaseUrl = import.meta.env.VITE_BACKEND; 
 
   const [showAssistant, setShowAssistant] = useState(false);
 
@@ -30,7 +31,7 @@ const PublishVideo = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("VITE_BACKEND/api/v1/user/currentUser", {
+        const res = await fetch(`${backendBaseUrl}/api/v1/user/currentUser`, {
           credentials: "include",
         });
         const data = await res.json();
@@ -67,7 +68,7 @@ const PublishVideo = () => {
     if (thumbnail) body.append("thumbnail", thumbnail);
 
     try {
-      const res = await fetch("VITE_BACKEND/api/v1/video/publishAVideo", {
+      const res = await fetch(`${backendBaseUrl}/api/v1/video/publishAVideo`, {
         method: "POST",
         body,
         credentials: "include",

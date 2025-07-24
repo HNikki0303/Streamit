@@ -8,6 +8,8 @@ const Register = ({onSuccess}) => {
     password: "",
   });
 
+  const backendBaseUrl = import.meta.env.VITE_BACKEND;
+  
   const [avatarFile, setAvatarFile] = useState(null);
   const [coverImageFile, setCoverImageFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -42,7 +44,7 @@ const Register = ({onSuccess}) => {
     if (coverImageFile) formData.append("coverImage", coverImageFile);
 
     try {
-      const res = await fetch("VITE_BACKEND/api/v1/user/register", {
+      const res = await fetch(`${backendBaseUrl}/api/v1/user/register`, {
         method: "POST",
         body: formData,
         credentials: "include",

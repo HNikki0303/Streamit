@@ -11,12 +11,14 @@ const UpdateProfile = () => {
     coverImage: null,
   });
 
+  const backendBaseUrl = import.meta.env.VITE_BACKEND;
+
   const [showAssistant, setShowAssistant] = useState(false);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("VITE_BACKEND/api/v1/user/currentUser", {
+        const res = await fetch(`${backendBaseUrl}/api/v1/user/currentUser`, {
           credentials: "include",
         });
         const data = await res.json();
