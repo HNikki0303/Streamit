@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom';
 const FormattedVideo = ({ id }) => {
   const navigate = useNavigate();
 
+  
   const [formattedVideo, setFormattedVideo] = useState({
     videoUrl: null,
     title: '',
