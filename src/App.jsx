@@ -5,7 +5,6 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LandingPage from './Components/LandingPage';
-import UploadVideo from "./Components/UploadVideo";
 import FormattedVideo from './Components/FormattedVideo';
 import PublishVideo from './Components/PublishVideo'; 
 import PaginatedVideoFeed from './Components/PaginatedVideoFeed';
@@ -23,7 +22,6 @@ function App() {
       <Routes>
 
         <Route path="/" element={<LandingPage />} />
-        <Route path="/upload" element={<UploadVideo />} />
         <Route path="/publish" element = {<PublishVideo/>}/>
         <Route path="/AI" element={<AI_Assistant/>}/>
         <Route path="/FormattedVideo" element={<FormattedVideo/>}/>
