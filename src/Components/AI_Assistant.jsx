@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import DOMPurify from 'dompurify';
 import { marked } from 'marked';
 
-
 const AI_Assistant = ({userDetails}) => {
 
   if(!userDetails){
