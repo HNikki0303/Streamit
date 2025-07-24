@@ -25,7 +25,7 @@ const FormattedVideo = ({ id }) => {
 
       setLoading(true);
       try {
-        const res = await fetch(`VITE_BACKEND/api/v1/video/videoLink/${id}`, {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND}/api/v1/video/videoLink/${id}`, {
           method: 'GET',
           credentials: 'include',
         });
