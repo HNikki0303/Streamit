@@ -6,7 +6,6 @@ import PaginatedVideoFeed from "./PaginatedVideoFeed";
 import AI_Assistant from "./AI_Assistant";
 
 export default function UserChannel() {
-
   const navigate= useNavigate();
   const [showAssistant,setShowAssistant] = useState(false);
 
