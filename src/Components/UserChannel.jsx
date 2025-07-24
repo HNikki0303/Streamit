@@ -9,7 +9,7 @@ export default function UserChannel() {
   const navigate= useNavigate();
   const [showAssistant,setShowAssistant] = useState(false);
 
-  const backendBaseUrl = import.meta.env.VITE_BACKEND;
+   const backendBaseUrl = import.meta.env.VITE_BACKEND; 
 
   const [userDetails, setUserDetails] = useState({
     coverImage: null,
@@ -123,7 +123,7 @@ export default function UserChannel() {
           </div>
 
           <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-md min-h-[300px]">
-            <PaginatedVideoFeed fetchUrl="http://localhost:8000/api/v1/video/paginated/user"></PaginatedVideoFeed>
+            <PaginatedVideoFeed fetchUrl=`${backendBaseUrl}/api/v1/video/paginated/user`></PaginatedVideoFeed>
           </div>
         </main>
       </div>
