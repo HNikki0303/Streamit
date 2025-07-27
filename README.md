@@ -2,6 +2,9 @@
 # StreamIt – Personalized Video Streaming Frontend
 Welcome to **StreamIt** — a cutting-edge, full-stack video streaming platform built with the MERN stack, featuring a personalized AI assistant: **Streamy**, that helps creators and viewers elevate their content experience!
 
+## 🚀 Live Demo
+[Click here to view the live site](https://streamit-git-master-nikita-pants-projects.vercel.app/)
+
 ## 🚀 Overview
 StreamIt is not just another video platform. It’s designed to empower content creators and viewers with **AI-powered insights** tailored to their unique channel personality and preferences.
 
