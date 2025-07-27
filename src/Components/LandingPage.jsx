@@ -59,7 +59,7 @@ export default function LandingPage() {
             {/* Hero Section */}
             <section className="relative py-20 px-6 bg-gradient-to-br from-[#713770] to-[#432F70] h-full">
               <div className="absolute top-[-8rem] left-[-6rem] w-96 h-96 bg-[#E95670] opacity-20 blur-3xl rounded-full animate-pulse z-0" />
-              <div className="absolute bottom-[-6rem] right-[-6rem] w-96 h-96 bg-[#B34270] opacity-25 blur-2xl rounded-full animate-pulse z-0" />
+             <div className="absolute bottom-[-6rem] right-[-2rem] w-72 h-72 bg-[#B34270] opacity-25 blur-2xl rounded-full animate-pulse z-0" />
               <div className="relative z-10 max-w-5xl mx-auto text-center">
                 <h2 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-5">
                    Stream Smarter . Watch Deeper .
