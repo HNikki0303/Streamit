@@ -13,12 +13,14 @@ const ChannelDescription = () => {
     coverImage: null,
   });
 
+  const backendBaseUrl = import.meta.env.VITE_BACKEND; 
+
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("VITE_BACKEND/api/v1/user/currentUser", {
+        const res = await fetch("backendBaseUrl/api/v1/user/currentUser", {
           credentials: "include",
         });
         const data = await res.json();
@@ -34,7 +36,7 @@ const ChannelDescription = () => {
 
   const handleSave = async () => {
     try {
-      const res = await fetch("VITE_BACKEND/api/v1/user/channelDescription", {
+      const res = await fetch("backendBaseUrl/api/v1/user/channelDescription", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
