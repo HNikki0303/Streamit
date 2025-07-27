@@ -64,7 +64,8 @@ export default function UserChannel() {
           <img
             src="/chatbot.png"
             alt="AI Assistant"
-            className="fixed top-4 right-4 w-18 h-16 z-10 rounded-full border border-[#E95670] hover:scale-105 transition"onClick={() => setShowAssistant(!showAssistant)}
+            className="fixed top-4 right-4 w-18 h-16 z-10 rounded-full border border-[#E95670] hover:scale-105 transition"
+            onClick={() => navigate('/AI)}
             title="Ask AI Assistant"
           />
         </div>
