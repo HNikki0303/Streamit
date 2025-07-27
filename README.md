@@ -4,6 +4,9 @@ Welcome to **StreamIt** — a cutting-edge, full-stack video streaming platform 
 
 ## 🚀 Live Demo
 [Click here to view the live site](https://streamit-git-master-nikita-pants-projects.vercel.app/)
+## 🔗 Related Repositories
+[StreamIt Backend Repository](https://github.com/HNikki0303/Streamit-Backend-)
+
 
 ## 🚀 Overview
 StreamIt is not just another video platform. It’s designed to empower content creators and viewers with **AI-powered insights** tailored to their unique channel personality and preferences.
